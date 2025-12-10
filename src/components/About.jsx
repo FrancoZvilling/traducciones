@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, Shield, Laptop } from 'lucide-react';
+import foto from '../assets/images/foto.jpeg';
 
 export default function About() {
     return (
@@ -70,25 +71,14 @@ export default function About() {
                 >
                     <div style={{
                         width: '100%',
-                        maxWidth: '500px',
-                        aspectRatio: '1/1',
-                        background: 'linear-gradient(135deg, var(--surface) 0%, var(--bg-color) 100%)',
+                        maxWidth: '400px',
+                        aspectRatio: '3/4',
                         borderRadius: '24px',
+                        overflow: 'hidden',
                         border: '1px solid var(--border)',
-                        position: 'relative',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        overflow: 'hidden'
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
                     }}>
-                        {/* Decorative Elements */}
-                        <div style={{ position: 'absolute', top: '20%', left: '20%', width: '60%', height: '60%', border: '2px solid var(--primary)', opacity: 0.2, borderRadius: '50%' }}></div>
-                        <div style={{ position: 'absolute', bottom: '10%', right: '10%', fontSize: '10rem', opacity: 0.05, fontFamily: 'serif', color: 'var(--text-color)' }}>A</div>
-
-                        <div style={{ textAlign: 'center', zIndex: 1 }}>
-                            <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>Aimé</h3>
-                            <p style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>Translations</p>
-                        </div>
+                        <img src={foto} alt="Aimé - Traductora Pública" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                 </motion.div>
 
