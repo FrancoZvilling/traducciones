@@ -5,7 +5,7 @@ import foto from '../assets/images/foto.jpeg';
 export default function About() {
     return (
         <section id="about" className="section" style={{ backgroundColor: 'var(--bg-color)', position: 'relative' }}>
-            <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4rem' }}>
+            <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '4rem' }}>
 
                 {/* Content Side */}
                 <motion.div
