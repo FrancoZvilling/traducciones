@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, MapPin } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Instagram } from 'lucide-react';
 
 export default function Contact() {
     return (
@@ -21,6 +21,53 @@ export default function Contact() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
 
+                        {/* WhatsApp Card */}
+                        <a href="https://wa.me/5493512280179?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <div className="contact-card" style={{
+                                background: 'var(--bg-color)',
+                                padding: '2rem',
+                                borderRadius: '12px',
+                                border: '1px solid var(--border)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                flexDirection: 'column',
+                                gap: '1rem',
+                                transition: 'transform 0.3s ease'
+                            }}>
+                                <div style={{ padding: '1rem', background: 'rgba(37, 211, 102, 0.1)', borderRadius: '50%', color: '#25D366' }}>
+                                    <MessageCircle size={32} />
+                                </div>
+                                <div>
+                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>WhatsApp</h4>
+                                    <p style={{ opacity: 0.7 }}>Escribime por WhatsApp</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        {/* Instagram Card */}
+                        <a href="#" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <div className="contact-card" style={{
+                                background: 'var(--bg-color)',
+                                padding: '2rem',
+                                borderRadius: '12px',
+                                border: '1px solid var(--border)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                flexDirection: 'column',
+                                gap: '1rem',
+                                transition: 'transform 0.3s ease'
+                            }}>
+                                <div style={{ padding: '1rem', background: 'rgba(225, 48, 108, 0.1)', borderRadius: '50%', color: '#E1306C' }}>
+                                    <Instagram size={32} />
+                                </div>
+                                <div>
+                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>Instagram</h4>
+                                    <p style={{ opacity: 0.7 }}>Seguime en Instagram</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        {/* Email Card (Moved) */}
                         <a href="mailto:contacto@aimetranslations.com" style={{ textDecoration: 'none' }}>
                             <div className="contact-card" style={{
                                 background: 'var(--bg-color)',
@@ -43,29 +90,7 @@ export default function Contact() {
                             </div>
                         </a>
 
-                        {/* Placeholder for WhatsApp/Phone if needed later, using generic for now */}
-                        <a href="#" style={{ textDecoration: 'none' }}>
-                            <div className="contact-card" style={{
-                                background: 'var(--bg-color)',
-                                padding: '2rem',
-                                borderRadius: '12px',
-                                border: '1px solid var(--border)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                flexDirection: 'column',
-                                gap: '1rem',
-                                transition: 'transform 0.3s ease'
-                            }}>
-                                <div style={{ padding: '1rem', background: 'rgba(37, 37, 132, 0.1)', borderRadius: '50%', color: 'var(--secondary)' }}>
-                                    <MessageCircle size={32} />
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>Consulta Rápida</h4>
-                                    <p style={{ opacity: 0.7 }}>Enviame un mensaje</p>
-                                </div>
-                            </div>
-                        </a>
-
+                        {/* Location Card */}
                         <div style={{
                             background: 'var(--bg-color)',
                             padding: '2rem',
@@ -87,7 +112,7 @@ export default function Contact() {
 
                     </div>
 
-                    <a href="mailto:contacto@aimetranslations.com" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
+                    <a href="https://wa.me/5493512280179?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
                         Solicitar Presupuesto
                     </a>
 

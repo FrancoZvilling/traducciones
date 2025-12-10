@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import sloganLogo from './assets/images/slogan-logo.png';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Services />
         <About />
         <Contact />
+        <FloatingWhatsApp />
       </main>
 
       <footer style={{
