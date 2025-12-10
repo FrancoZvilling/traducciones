@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Paleta de Colores - Modo Claro (Default) */
+  --primary: #74a9e8;
+  --secondary: #ce4e41;
+  --bg-color: #ffffff;
+  --text-color: #252584; /* Azul oscuro para texto en modo claro */
+  --accent: #252584;
+  --surface: #f8f9fa; /* Un blanco un poco mas apagado para tarjetas */
+  --border: #e2e8f0;
+
+  /* Tipografias */
+  --font-heading: "Libre Baskerville", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+[data-theme='dark'] {
+  /* Paleta de Colores - Modo Oscuro */
+  --primary: #74a9e8;
+  --secondary: #ce4e41;
+  --bg-color: #252584; /* Azul oscuro de fondo */
+  --text-color: #ffffff;
+  --accent: #74a9e8;
+  --surface: #1e1e6f; /* Un tono un poco mas oscuro/claro que el fondo para contraste */
+  --border: #3d3d9e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* Utilidades Simples */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #5d9ad9; /* Un poco mas oscuro */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(116, 169, 232, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #b93d31;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(206, 78, 65, 0.4);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), #a3c9f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
