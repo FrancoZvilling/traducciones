@@ -43,8 +43,8 @@ export default function Services() {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '2rem'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                    gap: '1.5rem'
                 }}>
                     {services.map((service, index) => (
                         <motion.div
@@ -55,24 +55,35 @@ export default function Services() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             style={{
                                 backgroundColor: 'var(--bg-color)',
-                                padding: '2rem',
+                                padding: '1.5rem',
                                 borderRadius: '12px',
                                 border: '1px solid var(--border)',
-                                boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
+                                boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+                                height: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                textAlign: 'left',
+                                cursor: 'default'
+                            }}
+                            whileHover={{
+                                y: -5,
+                                boxShadow: '0 12px 24px -10px rgba(206, 78, 65, 0.15)',
+                                borderColor: 'rgba(206, 78, 65, 0.3)'
                             }}
                         >
                             <div style={{
-                                color: 'var(--primary)',
-                                marginBottom: '1.5rem',
-                                background: 'rgba(116, 169, 232, 0.1)',
+                                color: '#ce4e41',
+                                marginBottom: '1.2rem',
+                                background: 'rgba(206, 78, 65, 0.08)',
                                 width: 'fit-content',
-                                padding: '1rem',
-                                borderRadius: '50%'
+                                padding: '0.8rem',
+                                borderRadius: '12px'
                             }}>
                                 {service.icon}
                             </div>
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>{service.title}</h3>
-                            <p style={{ color: 'var(--text-color)', opacity: 0.8 }}>{service.description}</p>
+                            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.8rem', fontFamily: 'var(--font-heading)' }}>{service.title}</h3>
+                            <p style={{ color: 'var(--text-color)', opacity: 0.8, fontSize: '0.95rem', lineHeight: '1.5' }}>{service.description}</p>
                         </motion.div>
                     ))}
                 </div>

@@ -4,35 +4,16 @@ import { ArrowRight } from 'lucide-react';
 export default function Hero() {
     return (
         <section id="hero" style={{
-            minHeight: '80vh',
+            minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             position: 'relative',
-            overflow: 'hidden'
+            background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1660927604748-9b039cb31fc1?q=80&w=1268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            color: '#ffffff'
         }}>
-            {/* Background decoration */}
-            <div style={{
-                position: 'absolute',
-                top: '-10%',
-                right: '-5%',
-                width: '400px',
-                height: '400px',
-                background: 'radial-gradient(circle, var(--primary) 0%, transparent 70%)',
-                opacity: 0.1,
-                borderRadius: '50%',
-                zIndex: -1
-            }}></div>
-            <div style={{
-                position: 'absolute',
-                bottom: '-10%',
-                left: '-5%',
-                width: '300px',
-                height: '300px',
-                background: 'radial-gradient(circle, var(--secondary) 0%, transparent 70%)',
-                opacity: 0.1,
-                borderRadius: '50%',
-                zIndex: -1
-            }}></div>
 
             <div className="container">
                 <div style={{ maxWidth: '800px' }}>
@@ -56,8 +37,8 @@ export default function Hero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         style={{
                             fontSize: '1.25rem',
-                            color: 'var(--text-color)',
-                            opacity: 0.8,
+                            color: '#f0f0f0',
+                            opacity: 0.9,
                             marginBottom: '2.5rem',
                             maxWidth: '600px'
                         }}
@@ -75,8 +56,8 @@ export default function Hero() {
                             Pedir Presupuesto <ArrowRight size={20} />
                         </a>
                         <a href="#services" className="btn" style={{
-                            border: '1px solid var(--border)',
-                            color: 'var(--text-color)'
+                            border: '1px solid #ffffff',
+                            color: '#ffffff'
                         }}>
                             Ver Servicios
                         </a>

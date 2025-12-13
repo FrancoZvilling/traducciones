@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,6 +7,25 @@ import logoNavbar from '../assets/images/logo-navbar.png';
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Determine text color based on scroll state and mobile menu state
+    // If at top and menu is closed (transparent bg), force white text for contrast against Hero image
+    // Otherwise use theme text color
+    const textColor = !isScrolled && !isOpen ? '#ffffff' : 'var(--text-color)';
 
     const navLinks = [
         { name: 'Inicio', href: '#' },
@@ -17,13 +36,17 @@ export default function Navbar() {
 
     return (
         <nav className="navbar" style={{
-            position: 'sticky',
+            position: 'fixed',
             top: 0,
+            left: 0,
+            width: '100%',
             zIndex: 1000,
-            backgroundColor: 'var(--bg-color)',
-            borderBottom: '1px solid var(--border)',
-            padding: '1rem 0',
-            transition: 'background-color 0.3s ease'
+            backgroundColor: isScrolled || isOpen ? 'var(--bg-color)' : 'transparent',
+            borderBottom: isScrolled || isOpen ? '1px solid var(--border)' : '1px solid transparent',
+            padding: '1rem 2rem', // Increased side padding
+            boxSizing: 'border-box', // Ensure padding doesn't affect width
+            transition: 'background-color 0.3s ease, padding 0.3s ease',
+            boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'
         }}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 {/* Logo */}
@@ -37,7 +60,7 @@ export default function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            style={{ fontWeight: 500 }}
+                            style={{ fontWeight: 500, color: textColor }}
                             className="nav-link"
                         >
                             {link.name}
@@ -49,7 +72,7 @@ export default function Navbar() {
                         style={{
                             background: 'transparent',
                             border: 'none',
-                            color: 'var(--text-color)',
+                            color: textColor,
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center'
@@ -67,13 +90,13 @@ export default function Navbar() {
                         style={{
                             background: 'transparent',
                             border: 'none',
-                            color: 'var(--text-color)',
+                            color: textColor,
                             marginRight: '1rem'
                         }}
                     >
                         {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
                     </button>
-                    <button onClick={() => setIsOpen(!isOpen)} style={{ background: 'transparent', border: 'none', color: 'var(--text-color)' }}>
+                    <button onClick={() => setIsOpen(!isOpen)} style={{ background: 'transparent', border: 'none', color: textColor }}>
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>

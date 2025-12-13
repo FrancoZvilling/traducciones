@@ -1,129 +1,164 @@
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, MapPin, Instagram } from 'lucide-react';
+import { Mail, MessageCircle, Instagram, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
     return (
-        <section id="contact" className="section" style={{ backgroundColor: 'var(--surface)' }}>
+        <section id="contact" className="section" style={{ backgroundColor: 'var(--surface)', overflow: 'hidden', padding: '6rem 0' }}>
             <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}
-                >
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>
-                        Empecemos tu proyecto
-                    </h2>
-                    <p style={{ fontSize: '1.2rem', marginBottom: '3rem', opacity: 0.8 }}>
-                        ¿Necesitás un presupuesto o tenés alguna duda? Escribime contándome qué documentos necesitás traducir y te responderé a la brevedad.
-                    </p>
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '4rem',
+                    alignItems: 'center'
+                }}>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+                    {/* Texto y Enlaces */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}>
+                            Hablemos de tu <br />
+                            <span className="text-gradient">próximo proyecto</span>
+                        </h2>
+                        <p style={{ fontSize: '1.2rem', marginBottom: '3rem', opacity: 0.8, lineHeight: 1.6 }}>
+                            Estoy lista para ayudarte con tus traducciones. Escribime por el medio que prefieras y recibí una respuesta rápida y personalizada.
+                        </p>
 
-                        {/* WhatsApp Card */}
-                        <a href="https://wa.me/5493512280179?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                            <div className="contact-card" style={{
-                                background: 'var(--bg-color)',
-                                padding: '2rem',
-                                borderRadius: '12px',
-                                border: '1px solid var(--border)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                flexDirection: 'column',
-                                gap: '1rem',
-                                transition: 'transform 0.3s ease'
-                            }}>
-                                <div style={{ padding: '1rem', background: 'rgba(37, 211, 102, 0.1)', borderRadius: '50%', color: '#25D366' }}>
-                                    <MessageCircle size={32} />
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>WhatsApp</h4>
-                                    <p style={{ opacity: 0.7 }}>Escribime por WhatsApp</p>
-                                </div>
-                            </div>
-                        </a>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
-                        {/* Instagram Card */}
-                        <a href="#" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                            <div className="contact-card" style={{
-                                background: 'var(--bg-color)',
-                                padding: '2rem',
-                                borderRadius: '12px',
-                                border: '1px solid var(--border)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                flexDirection: 'column',
-                                gap: '1rem',
-                                transition: 'transform 0.3s ease'
-                            }}>
-                                <div style={{ padding: '1rem', background: 'rgba(225, 48, 108, 0.1)', borderRadius: '50%', color: '#E1306C' }}>
-                                    <Instagram size={32} />
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>Instagram</h4>
-                                    <p style={{ opacity: 0.7 }}>Seguime en Instagram</p>
-                                </div>
-                            </div>
-                        </a>
+                            {/* WhatsApp Button - Primary */}
+                            <a
+                                href="https://wa.me/5493512280179?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-link-modern"
+                                style={{
+                                    background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', // WhatsApp colors
+                                    color: '#fff',
+                                    padding: '1.2rem 2rem',
+                                    borderRadius: '50px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    textDecoration: 'none',
+                                    boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)',
+                                    transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                                }}
+                            >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', fontWeight: 500 }}>
+                                    <MessageCircle size={24} /> WhatsApp
+                                </span>
+                                <ArrowRight size={20} />
+                            </a>
 
-                        {/* Email Card (Moved) */}
-                        <a href="mailto:contacto@aimetranslations.com" style={{ textDecoration: 'none' }}>
-                            <div className="contact-card" style={{
-                                background: 'var(--bg-color)',
-                                padding: '2rem',
-                                borderRadius: '12px',
-                                border: '1px solid var(--border)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                flexDirection: 'column',
-                                gap: '1rem',
-                                transition: 'transform 0.3s ease'
-                            }}>
-                                <div style={{ padding: '1rem', background: 'rgba(116, 169, 232, 0.1)', borderRadius: '50%', color: 'var(--primary)' }}>
-                                    <Mail size={32} />
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>Email</h4>
-                                    <p style={{ opacity: 0.7 }}>contacto@aimetranslations.com</p>
-                                </div>
-                            </div>
-                        </a>
+                            {/* Instagram */}
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-link-modern"
+                                style={{
+                                    background: 'var(--surface)',
+                                    color: 'var(--text-color)',
+                                    padding: '1.2rem 2rem',
+                                    borderRadius: '50px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    textDecoration: 'none',
+                                    border: '1px solid var(--border)',
+                                    transition: 'transform 0.2s ease, border-color 0.2s ease'
+                                }}
+                            >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', fontWeight: 500 }}>
+                                    <span style={{ color: '#E1306C' }}><Instagram size={24} /></span> Instagram
+                                </span>
+                                <ArrowRight size={20} style={{ opacity: 0.5 }} />
+                            </a>
 
-                        {/* Location Card */}
+                            {/* Email */}
+                            <a
+                                href="mailto:contacto@aimetranslations.com"
+                                className="contact-link-modern"
+                                style={{
+                                    background: 'var(--surface)',
+                                    color: 'var(--text-color)',
+                                    padding: '1.2rem 2rem',
+                                    borderRadius: '50px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    textDecoration: 'none',
+                                    border: '1px solid var(--border)',
+                                    transition: 'transform 0.2s ease, border-color 0.2s ease'
+                                }}
+                            >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', fontWeight: 500 }}>
+                                    <span style={{ color: '#74a9e8' }}><Mail size={24} /></span> Email
+                                </span>
+                                <ArrowRight size={20} style={{ opacity: 0.5 }} />
+                            </a>
+
+                        </div>
+                    </motion.div>
+
+                    {/* Imagen Visual */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}
+                    >
+                        {/* Blob Background */}
                         <div style={{
-                            background: 'var(--bg-color)',
-                            padding: '2rem',
-                            borderRadius: '12px',
-                            border: '1px solid var(--border)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flexDirection: 'column',
-                            gap: '1rem'
+                            position: 'absolute',
+                            width: '400px',
+                            height: '400px',
+                            background: 'radial-gradient(circle, var(--primary) 0%, transparent 70%)',
+                            opacity: 0.2,
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            zIndex: 0
+                        }}></div>
+
+                        {/* Image Container with Organic Shape */}
+                        <div style={{
+                            width: '350px',
+                            height: '450px',
+                            overflow: 'hidden',
+                            borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', // Organic blob shape
+                            boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                            position: 'relative',
+                            zIndex: 1,
+                            background: '#f0f0f0'
                         }}>
-                            <div style={{ padding: '1rem', background: 'rgba(116, 169, 232, 0.1)', borderRadius: '50%', color: 'var(--accent)' }}>
-                                <MapPin size={32} />
-                            </div>
-                            <div>
-                                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>Ubicación</h4>
-                                <p style={{ opacity: 0.7 }}>Córdoba, Argentina</p>
-                            </div>
+                            <img
+                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop"
+                                alt="Professional Translator"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
                         </div>
 
-                    </div>
 
-                    <a href="https://wa.me/5493512280179?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
-                        Solicitar Presupuesto
-                    </a>
 
-                </motion.div>
+                    </motion.div>
+
+                </div>
             </div>
+
             <style>{`
-        .contact-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-      `}</style>
+                .contact-link-modern:hover {
+                    transform: translateX(10px);
+                }
+                .contact-link-modern:hover svg {
+                    opacity: 1 !important;
+                }
+            `}</style>
         </section>
     );
 }
