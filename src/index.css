@@ -5,9 +5,11 @@
   --primary: #74a9e8;
   --secondary: #ce4e41;
   --bg-color: #ffffff;
-  --text-color: #252584; /* Azul oscuro para texto en modo claro */
+  --text-color: #252584;
+  /* Azul oscuro para texto en modo claro */
   --accent: #252584;
-  --surface: #f8f9fa; /* Un blanco un poco mas apagado para tarjetas */
+  --surface: #f8f9fa;
+  /* Un blanco un poco mas apagado para tarjetas */
   --border: #e2e8f0;
 
   /* Tipografias */
@@ -19,10 +21,12 @@
   /* Paleta de Colores - Modo Oscuro */
   --primary: #74a9e8;
   --secondary: #ce4e41;
-  --bg-color: #252584; /* Azul oscuro de fondo */
+  --bg-color: #252584;
+  /* Azul oscuro de fondo */
   --text-color: #ffffff;
   --accent: #74a9e8;
-  --surface: #1e1e6f; /* Un tono un poco mas oscuro/claro que el fondo para contraste */
+  --surface: #1e1e6f;
+  /* Un tono un poco mas oscuro/claro que el fondo para contraste */
   --border: #3d3d9e;
 }
 
@@ -30,6 +34,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -41,7 +50,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
@@ -65,6 +79,7 @@ button {
 
 /* Utilidades Simples */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -72,6 +87,21 @@ button {
 
 .section {
   padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .service-card {
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
 }
 
 .btn {
@@ -92,7 +122,8 @@ button {
 }
 
 .btn-primary:hover {
-  background-color: #5d9ad9; /* Un poco mas oscuro */
+  background-color: #5d9ad9;
+  /* Un poco mas oscuro */
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(116, 169, 232, 0.4);
 }

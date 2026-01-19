@@ -7,7 +7,7 @@ export default function Contact() {
             <div className="container">
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // Reduced min width
                     gap: '4rem',
                     alignItems: 'center'
                 }}>
@@ -116,7 +116,8 @@ export default function Contact() {
                         {/* Blob Background */}
                         <div style={{
                             position: 'absolute',
-                            width: '400px',
+                            width: '100%',
+                            maxWidth: '400px',
                             height: '400px',
                             background: 'radial-gradient(circle, var(--primary) 0%, transparent 70%)',
                             opacity: 0.2,
@@ -128,7 +129,8 @@ export default function Contact() {
 
                         {/* Image Container with Organic Shape */}
                         <div style={{
-                            width: '350px',
+                            width: '100%',
+                            maxWidth: '350px',
                             height: '450px',
                             overflow: 'hidden',
                             borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', // Organic blob shape

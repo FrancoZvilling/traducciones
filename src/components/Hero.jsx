@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import logoNavbar from '../assets/images/logo-navbar.png';
 
 export default function Hero() {
     return (
@@ -12,15 +13,37 @@ export default function Hero() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            color: '#ffffff'
+            color: '#ffffff',
+            paddingTop: '80px' // Offset for fixed navbar to prevent overlapping content
         }}>
 
             <div className="container">
-                <div style={{ maxWidth: '800px' }}>
-                    <motion.h1
+                <div style={{
+                    maxWidth: '800px',
+                    margin: '0 auto',
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                }}>
+                    <motion.img
+                        src={logoNavbar}
+                        alt="Aimé Translations"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
+                        style={{
+                            display: 'block',
+                            maxWidth: 'clamp(130px, 40vw, 240px)', // Slightly smaller
+                            width: '100%',
+                            height: 'auto',
+                            marginBottom: '1.5rem'
+                        }}
+                    />
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
                         style={{
                             fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                             marginBottom: '1.5rem',
@@ -50,7 +73,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
+                        style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
                     >
                         <a href="#contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>
                             Pedir Presupuesto <ArrowRight size={20} />

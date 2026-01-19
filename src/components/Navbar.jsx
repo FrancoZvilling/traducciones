@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoNavbar from '../assets/images/logo-navbar.png';
+import paloma from '../assets/images/paloma.png';
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
@@ -23,7 +23,7 @@ export default function Navbar() {
     }, []);
 
     // Determine text color based on scroll state and mobile menu state
-    // If at top and menu is closed (transparent bg), force white text for contrast against Hero image
+    // If at top and mobile menu is closed (transparent bg), force white text for contrast against Hero image
     // Otherwise use theme text color
     const textColor = !isScrolled && !isOpen ? '#ffffff' : 'var(--text-color)';
 
@@ -43,7 +43,7 @@ export default function Navbar() {
             zIndex: 1000,
             backgroundColor: isScrolled || isOpen ? 'var(--bg-color)' : 'transparent',
             borderBottom: isScrolled || isOpen ? '1px solid var(--border)' : '1px solid transparent',
-            padding: '1rem 2rem', // Increased side padding
+            padding: '1rem 0', // Rely on .container for horizontal padding
             boxSizing: 'border-box', // Ensure padding doesn't affect width
             transition: 'background-color 0.3s ease, padding 0.3s ease',
             boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'
@@ -51,7 +51,7 @@ export default function Navbar() {
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 {/* Logo */}
                 <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                    <img src={logoNavbar} alt="Aimé Translations" style={{ height: '50px', objectFit: 'contain' }} />
+                    <img src={paloma} alt="Aimé Translations" style={{ height: '50px', objectFit: 'contain' }} />
                 </a>
 
                 {/* Desktop Nav */}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FileText, GraduationCap, Gavel, Globe } from 'lucide-react';
+import Traquelado from '../assets/images/Traquelado.png';
 
 const services = [
     {
@@ -10,17 +11,17 @@ const services = [
     {
         icon: <FileText size={32} />,
         title: "Documentos Personales",
-        description: "Actas de nacimiento, matrimonio, antecedentes penales y pasaportes."
+        description: "Actas de nacimiento, matrimonio, antecedentes penales, pasaportes, entre otros."
     },
     {
         icon: <GraduationCap size={32} />,
-        title: "Académicos",
-        description: "Diplomas, analíticos, programas de estudio y certificaciones."
+        title: "Documentos Académicos",
+        description: "Diplomas, analíticos, programas de estudio, certificaciones y más."
     },
     {
         icon: <Globe size={32} />,
-        title: "Inmigración y Trabajo",
-        description: "Documentación para visas, residencia y aplicaciones laborales en el exterior."
+        title: "Documentos de Inmigración y Trabajo",
+        description: "Documentación para visas, residencia, aplicaciones laborales y otros trámites."
     }
 ];
 
@@ -37,7 +38,7 @@ export default function Services() {
                 >
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Servicios</h2>
                     <p style={{ fontSize: '1.2rem', opacity: 0.8, maxWidth: '600px', margin: '0 auto' }}>
-                        Soluciones integrales de traducción para cada necesidad, con la seriedad que tus trámites requieren.
+                        Soluciones integrales de traducción para cada necesidad, con el compromiso que tus trámites requieren.
                     </p>
                 </motion.div>
 
@@ -49,41 +50,48 @@ export default function Services() {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
+                            className="service-card"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             style={{
-                                backgroundColor: 'var(--bg-color)',
-                                padding: '1.5rem',
-                                borderRadius: '12px',
-                                border: '1px solid var(--border)',
-                                boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-                                height: '100%',
+                                backgroundImage: `url(${Traquelado})`,
+                                backgroundSize: '100% 100%',
+                                backgroundRepeat: 'no-repeat',
+                                aspectRatio: '0.9', // Maintain aspect ratio (slightly taller than wide)
+                                color: '#ffffff',
+                                padding: '2rem 1.5rem', // Reduced padding to fit more text
+                                overflow: 'hidden', // Prevent size expansion from content
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
                                 textAlign: 'left',
-                                cursor: 'default'
+                                cursor: 'default',
+                                filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.2))'
                             }}
                             whileHover={{
                                 y: -5,
-                                boxShadow: '0 12px 24px -10px rgba(206, 78, 65, 0.15)',
-                                borderColor: 'rgba(206, 78, 65, 0.3)'
+                                filter: 'drop-shadow(0 15px 15px rgba(0,0,0,0.3))',
+                                transition: { duration: 0.15, ease: 'easeOut' }
                             }}
                         >
                             <div style={{
-                                color: '#ce4e41',
+                                color: '#ffffff',
                                 marginBottom: '1.2rem',
-                                background: 'rgba(206, 78, 65, 0.08)',
-                                width: 'fit-content',
-                                padding: '0.8rem',
-                                borderRadius: '12px'
+                                background: 'rgba(255, 255, 255, 0.2)',
+                                width: '60px',
+                                height: '60px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                borderRadius: '50%',
+                                flexShrink: 0
                             }}>
                                 {service.icon}
                             </div>
                             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.8rem', fontFamily: 'var(--font-heading)' }}>{service.title}</h3>
-                            <p style={{ color: 'var(--text-color)', opacity: 0.8, fontSize: '0.95rem', lineHeight: '1.5' }}>{service.description}</p>
+                            <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.95rem', lineHeight: '1.5' }}>{service.description}</p>
                         </motion.div>
                     ))}
                 </div>

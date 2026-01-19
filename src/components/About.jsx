@@ -9,7 +9,7 @@ export default function About() {
 
                 {/* Content Side */}
                 <motion.div
-                    style={{ flex: '1 1 500px' }}
+                    style={{ flex: '1 1 300px' }}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -25,11 +25,15 @@ export default function About() {
                     </h2>
 
                     <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', opacity: 0.9 }}>
-                        Aimé Translations nace de la pasión por conectar culturas y legalidades. Comencé este camino tras asociarme al <strong>Colegio de Traductores Públicos de Córdoba</strong>, con el objetivo de brindar un servicio donde la confianza y la precisión sean los pilares fundamentales.
+                        Aimé Translations nace de la pasión por <strong>conectar culturas e idiomas</strong>, y de las ganas de ayudar a las personas a <strong>cumplir sus sueños de viajar</strong>, estudiar o trabajar en el exterior. Pero, sobre todo, nace de mi amor por los idiomas.
+                    </p>
+
+                    <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', opacity: 0.9 }}>
+                        Al trabajar con documentos de inmigración, comprendí la verdadera importancia de la traducción legal y del impacto que tiene <strong>transmitir correctamente un mensaje</strong>, tanto en su contenido como en su forma.
                     </p>
 
                     <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-                        Entiendo la importancia de tus documentos. Ya sea que estés aplicando a una beca, emigrando, o validando trámites personales, mi misión es asegurar que la barrera del idioma no sea un obstáculo.
+                        Fue entonces cuando decidí asociarme al <strong>Colegio de Traductores Públicos de Córdoba</strong>, y comencé a especializarme en el área legal. Entiendo el valor y la responsabilidad que implican tus documentos. Ya sea que estés aplicando a una beca, emigrando o realizando trámites personales, mi misión es asegurar que la barrera del idioma nunca sea un obstáculo para alcanzar tus objetivos.
                     </p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
@@ -63,7 +67,7 @@ export default function About() {
 
                 {/* Visual Side (Abstract/Image Placeholder) */}
                 <motion.div
-                    style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}
+                    style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
