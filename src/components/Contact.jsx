@@ -31,7 +31,7 @@ export default function Contact() {
 
                             {/* WhatsApp Button - Primary */}
                             <a
-                                href="https://wa.me/5493512280179?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto"
+                                href="https://wa.me/5493513683990?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="contact-link-modern"
@@ -56,7 +56,7 @@ export default function Contact() {
 
                             {/* Instagram */}
                             <a
-                                href="#"
+                                href="https://www.instagram.com/aimetranslations/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="contact-link-modern"
@@ -81,7 +81,7 @@ export default function Contact() {
 
                             {/* Email */}
                             <a
-                                href="mailto:contacto@aimetranslations.com"
+                                href="mailto:rcorte@aimetranslations.com"
                                 className="contact-link-modern"
                                 style={{
                                     background: 'var(--surface)',
@@ -140,7 +140,7 @@ export default function Contact() {
                             background: '#f0f0f0'
                         }}>
                             <img
-                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="Professional Translator"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />

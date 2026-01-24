@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import logoNavbar from '../assets/images/logo-navbar.png';
+import paloma from '../assets/images/paloma.png';
 
 export default function Hero() {
     return (
@@ -27,14 +27,14 @@ export default function Hero() {
                     alignItems: 'center'
                 }}>
                     <motion.img
-                        src={logoNavbar}
+                        src={paloma}
                         alt="Aimé Translations"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         style={{
                             display: 'block',
-                            maxWidth: 'clamp(130px, 40vw, 240px)', // Slightly smaller
+                            maxWidth: 'clamp(65px, 20vw, 120px)', // Reduced to approx half size
                             width: '100%',
                             height: 'auto',
                             marginBottom: '1.5rem'

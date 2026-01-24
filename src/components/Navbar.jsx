@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { motion, AnimatePresence } from 'framer-motion';
-import paloma from '../assets/images/paloma.png';
+import logoNavbar from '../assets/images/logo-navbar.png';
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
@@ -51,7 +51,7 @@ export default function Navbar() {
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 {/* Logo */}
                 <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                    <img src={paloma} alt="Aimé Translations" style={{ height: '50px', objectFit: 'contain' }} />
+                    <img src={logoNavbar} alt="Aimé Translations" style={{ height: '50px', objectFit: 'contain' }} />
                 </a>
 
                 {/* Desktop Nav */}

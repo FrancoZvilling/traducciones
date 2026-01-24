@@ -65,8 +65,8 @@ export default function Services() {
                                 overflow: 'hidden', // Prevent size expansion from content
                                 display: 'flex',
                                 flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                textAlign: 'left',
+                                alignItems: 'center',
+                                textAlign: 'center',
                                 cursor: 'default',
                                 filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.2))'
                             }}
@@ -77,7 +77,7 @@ export default function Services() {
                             }}
                         >
                             <div style={{
-                                color: '#ffffff',
+                                color: '#ce4e41',
                                 marginBottom: '1.2rem',
                                 background: 'rgba(255, 255, 255, 0.2)',
                                 width: '60px',
