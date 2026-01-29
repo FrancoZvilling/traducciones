@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Linkedin, ArrowUp } from 'lucide-react';
+import { Mail, Instagram, Linkedin } from 'lucide-react';
 import sloganLogo from '../assets/images/slogan-logo.png';
 import banner from '../assets/images/banner.png';
 
@@ -17,15 +17,13 @@ const WhatsAppIcon = ({ size = 20 }) => (
 );
 
 export default function Footer() {
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+
 
     const socialLinks = [
-        { icon: <Instagram size={18} />, href: 'https://www.instagram.com/aimetranslations/', label: 'Instagram' },
-        { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/rocio-corte/?originalSubdomain=ar', label: 'LinkedIn' },
-        { icon: <Mail size={18} />, href: 'mailto:rcorte@aimetranslations.com', label: 'Email' },
-        { icon: <WhatsAppIcon size={18} />, href: 'https://wa.me/5493513683990', label: 'WhatsApp' }
+        { icon: <Instagram size={18} />, href: 'https://www.instagram.com/aimetranslations/', label: 'Instagram', text: '@aimetranslations' },
+        { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/rocio-corte/?originalSubdomain=ar', label: 'LinkedIn', text: 'Rocío Corte' },
+        { icon: <Mail size={18} />, href: 'mailto:rcorte@aimetranslations.com', label: 'Email', text: 'rcorte@aimetranslations.com' },
+        { icon: <WhatsAppIcon size={18} />, href: 'https://wa.me/5493513683990', label: 'WhatsApp', text: '+54 9 351 368 3990' }
     ];
 
     const quickLinks = [
@@ -66,14 +64,16 @@ export default function Footer() {
                 }}>
 
                     {/* Brand Column with Copyright included */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '0.8rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '0.6rem' }}>
                         <img src={sloganLogo} alt="Aimé Translations" style={{ maxWidth: '160px', height: 'auto' }} />
                         <p style={{ opacity: 0.8, fontSize: '0.9rem', maxWidth: '280px', lineHeight: '1.4' }}>
                             Traducciones públicas y servicios lingüísticos con compromiso y precisión profesional.
                         </p>
-                        {/* Copyright moved here */}
-                        <p style={{ opacity: 0.5, fontSize: '0.75rem', marginTop: '0.5rem' }}>
+                        <p style={{ opacity: 0.5, fontSize: '0.75rem', marginTop: '0.2rem' }}>
                             &copy; {new Date().getFullYear()} Aimé Translations.<br />Todos los derechos reservados.
+                        </p>
+                        <p style={{ fontSize: '0.75rem', opacity: 0.6 }}>
+                            Desarrollado por <a href="https://wa.me/5493541315119" target="_blank" rel="noopener noreferrer" style={{ color: '#ce4e41', textDecoration: 'none' }}>Franco Zvilling</a>
                         </p>
                     </div>
 
@@ -110,19 +110,29 @@ export default function Footer() {
                             <span style={{ position: 'absolute', bottom: '-4px', left: '50%', transform: 'translateX(-50%)', width: '30px', height: '2px', background: 'var(--secondary)' }}></span>
                         </h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
-                            <p style={{ opacity: 0.8, fontSize: '0.9rem' }}>
-                                ¿Tenés dudas? Escribime a mis redes:
-                            </p>
-                            <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center' }}>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', alignItems: 'flex-start', paddingLeft: '35px' }}>
                                 {socialLinks.map((social, index) => (
                                     <a
                                         key={index}
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        className="footer-link"
                                         style={{
-                                            width: '36px',
-                                            height: '36px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.8rem',
+                                            textDecoration: 'none',
+                                            color: 'var(--text-color)',
+                                            fontSize: '0.85rem',
+                                            opacity: 0.8,
+                                            transition: 'opacity 0.2s, transform 0.2s'
+                                        }}
+                                    >
+                                        <div style={{
+                                            width: '32px',
+                                            height: '32px',
                                             borderRadius: '50%',
                                             background: 'var(--surface)',
                                             border: '1px solid var(--border)',
@@ -130,47 +140,21 @@ export default function Footer() {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             color: 'var(--text-color)',
-                                            transition: 'all 0.3s ease'
-                                        }}
-                                        className="social-icon"
-                                    >
-                                        {social.icon}
+                                            flexShrink: 0
+                                        }}>
+                                            {social.icon}
+                                        </div>
+                                        <span>{social.text}</span>
                                     </a>
                                 ))}
                             </div>
-                            <p style={{ opacity: 0.5, fontSize: '0.75rem', marginTop: '0.5rem' }}>
-                                Desarrollado por <a href="https://wa.me/5493541315119" target="_blank" rel="noopener noreferrer" style={{ color: '#ce4e41', textDecoration: 'none', fontWeight: 500 }}>Franco Zvilling</a>
-                            </p>
+
                         </div>
                     </div>
                 </div>
 
-                {/* Absolute Scroll to Top Button */}
-                <button
-                    onClick={scrollToTop}
-                    title="Volver arriba"
-                    style={{
-                        position: 'absolute',
-                        bottom: '1.5rem',
-                        right: '1.5rem',
-                        background: 'transparent',
-                        border: '1px solid var(--border)',
-                        borderRadius: '50%',
-                        width: '32px',
-                        height: '32px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'inherit',
-                        cursor: 'pointer',
-                        opacity: 0.6,
-                        transition: 'opacity 0.3s, background 0.3s'
-                    }}
-                    onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.background = 'var(--surface)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.6'; e.currentTarget.style.background = 'transparent'; }}
-                >
-                    <ArrowUp size={16} />
-                </button>
+
+
             </div>
 
             <style>{`
@@ -186,6 +170,6 @@ export default function Footer() {
                     border-color: var(--primary) !important;
                 }
             `}</style>
-        </footer>
+        </footer >
     );
 }
