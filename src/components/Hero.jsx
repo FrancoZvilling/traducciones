@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import paloma from '../assets/images/paloma.png';
+
 
 export default function Hero() {
     return (
@@ -26,20 +26,7 @@ export default function Hero() {
                     flexDirection: 'column',
                     alignItems: 'center'
                 }}>
-                    <motion.img
-                        src={paloma}
-                        alt="Aimé Translations"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        style={{
-                            display: 'block',
-                            maxWidth: 'clamp(65px, 20vw, 120px)', // Reduced to approx half size
-                            width: '100%',
-                            height: 'auto',
-                            marginBottom: '1.5rem'
-                        }}
-                    />
+
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

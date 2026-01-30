@@ -51,7 +51,7 @@ export default function Navbar() {
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 {/* Logo */}
                 <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                    <img src={logoNavbar} alt="Aimé Translations" style={{ height: '55px', objectFit: 'contain' }} />
+                    <img src={logoNavbar} alt="Aimé Translations" className="navbar-logo" />
                 </a>
 
                 {/* Desktop Nav */}
@@ -133,6 +133,18 @@ export default function Navbar() {
             </AnimatePresence>
 
             <style>{`
+        .navbar-logo {
+          height: 55px;
+          object-fit: contain;
+          transition: height 0.3s ease;
+        }
+        
+        @media (min-width: 769px) { 
+          .navbar-logo {
+            height: 70px; 
+          }
+        }
+
         @media (max-width: 768px) {
           .desktop-menu {
             display: none !important;
