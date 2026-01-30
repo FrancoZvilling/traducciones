@@ -51,7 +51,7 @@ export default function Navbar() {
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 {/* Logo */}
                 <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                    <img src={logoNavbar} alt="Aimé Translations" style={{ height: '50px', objectFit: 'contain' }} />
+                    <img src={logoNavbar} alt="Aimé Translations" style={{ height: '55px', objectFit: 'contain' }} />
                 </a>
 
                 {/* Desktop Nav */}
