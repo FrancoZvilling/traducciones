@@ -111,7 +111,7 @@ export default function Navbar() {
                         exit={{ opacity: 0, height: 0 }}
                         style={{
                             overflow: 'hidden',
-                            backgroundColor: theme === 'dark' ? '#303090' : '#f0f8ff', // Lighter blue tones
+                            backgroundColor: theme === 'dark' ? 'var(--bg-color)' : '#f0f8ff', // Lighter blue tones
                             borderBottom: '1px solid var(--border)'
                         }}
                         className="mobile-menu"

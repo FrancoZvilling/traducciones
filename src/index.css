@@ -18,16 +18,14 @@
 }
 
 [data-theme='dark'] {
-  /* Paleta de Colores - Modo Oscuro */
-  --primary: #74a9e8;
-  --secondary: #ce4e41;
-  --bg-color: #252584;
-  /* Azul oscuro de fondo */
-  --text-color: #ffffff;
-  --accent: #74a9e8;
-  --surface: #1e1e6f;
-  /* Un tono un poco mas oscuro/claro que el fondo para contraste */
-  --border: #3d3d9e;
+  /* Paleta de Colores - Modo Oscuro (Profesional Slate) */
+  --primary: #60a5fa; /* Blue 400 - Más suave y moderno */
+  --secondary: #ce4e41; /* Mantenemos el rojo de marca */
+  --bg-color: #0f172a; /* Slate 900 - Fondo oscuro profesional (no chillón) */
+  --text-color: #f8fafc; /* Slate 50 - Blanco suave para lectura */
+  --accent: #38bdf8; /* Sky 400 */
+  --surface: #1e293b; /* Slate 800 - Contraste sutil para tarjetas */
+  --border: #334155; /* Slate 700 */
 }
 
 * {
