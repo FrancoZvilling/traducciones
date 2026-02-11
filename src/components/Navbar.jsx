@@ -34,6 +34,33 @@ export default function Navbar() {
         { name: 'Contacto', href: '#contact' },
     ];
 
+    const handleNavClick = (e, href) => {
+        e.preventDefault();
+        setIsOpen(false);
+
+        // Add delay to allow menu to close and prevent scroll interruption on mobile
+        setTimeout(() => {
+            if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            const targetId = href.replace('#', '');
+            const element = document.getElementById(targetId);
+
+            if (element) {
+                const headerOffset = 80; // Height of fixed navbar
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 300);
+    };
+
     return (
         <nav className="navbar" style={{
             position: 'fixed',
@@ -50,7 +77,7 @@ export default function Navbar() {
         }}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 {/* Logo */}
-                <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+                <a href="#" onClick={(e) => handleNavClick(e, '#')} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
                     <img src={logoNavbar} alt="Aimé Translations" className="navbar-logo" />
                 </a>
 
@@ -60,6 +87,7 @@ export default function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
+                            onClick={(e) => handleNavClick(e, link.href)}
                             style={{ fontWeight: 500, color: textColor }}
                             className="nav-link"
                         >
@@ -121,7 +149,7 @@ export default function Navbar() {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    onClick={() => setIsOpen(false)}
+                                    onClick={(e) => handleNavClick(e, link.href)}
                                     style={{ fontSize: '1.1rem', fontWeight: 500, paddingLeft: '1rem' }}
                                 >
                                     {link.name}
