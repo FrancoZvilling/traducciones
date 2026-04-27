@@ -2,6 +2,16 @@ import { motion } from 'framer-motion';
 import { Mail, MessageCircle, Instagram, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
+    const handleWhatsAppClick = () => {
+        if (window.gtag) {
+            window.gtag('event', 'conversion', {
+                'send_to': 'AW-18087775338/_A58CIOI7KMcEOqY9rBD',
+                'value': 1.0,
+                'currency': 'ARS'
+            });
+        }
+    };
+
     return (
         <section id="contact" className="section" style={{ backgroundColor: 'var(--surface)', overflow: 'hidden', padding: '6rem 0' }}>
             <div className="container">
@@ -34,6 +44,7 @@ export default function Contact() {
                                 href="https://wa.me/5493513683990?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={handleWhatsAppClick}
                                 className="contact-link-modern"
                                 style={{
                                     background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', // WhatsApp colors

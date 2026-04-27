@@ -4,11 +4,22 @@ import { MessageCircle } from 'lucide-react';
 export default function FloatingWhatsApp() {
     const whatsappUrl = "https://wa.me/5493513683990?text=Hola,%20vengo%20desde%20tu%20pagina%20web%20y%20quiero%20solicitarte%20un%20presupuesto";
 
+    const handleWhatsAppClick = () => {
+        if (window.gtag) {
+            window.gtag('event', 'conversion', {
+                'send_to': 'AW-18087775338/_A58CIOI7KMcEOqY9rBD',
+                'value': 1.0,
+                'currency': 'ARS'
+            });
+        }
+    };
+
     return (
         <motion.a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
