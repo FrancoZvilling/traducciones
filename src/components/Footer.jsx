@@ -32,7 +32,6 @@ export default function Footer() {
         { name: 'Sobre Mí', href: '#about' },
         { name: 'Contacto', href: '#contact' }
     ];
-
     return (
         <footer style={{
             position: 'relative',
@@ -54,46 +53,42 @@ export default function Footer() {
                 zIndex: 0
             }}></div>
 
-            {/* Main Content - Reduced Padding for compactness */}
-            <div className="container" style={{ position: 'relative', zIndex: 1, padding: '2.5rem 2rem 1.5rem 2rem' }}>
-                <div style={{
+            {/* Main Content */}
+            <div className="container" style={{ position: 'relative', zIndex: 1, padding: '3rem 2rem 1.5rem 2rem' }}>
+                <div className="footer-top" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                    gap: '2rem',
-                    alignItems: 'start'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                    gap: '3rem',
+                    paddingBottom: '2.5rem',
+                    borderBottom: '1px solid var(--border)'
                 }}>
 
-                    {/* Brand Column with Copyright included */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '0.6rem' }}>
-                        <img src={sloganLogo} alt="Aimé Translations" style={{ maxWidth: '160px', height: 'auto' }} />
-                        <p style={{ opacity: 0.8, fontSize: '0.9rem', maxWidth: '280px', lineHeight: '1.4' }}>
+                    {/* Brand Column */}
+                    <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                        <img src={sloganLogo} alt="Aimé Translations" style={{ maxWidth: '180px', height: 'auto' }} />
+                        <p style={{ opacity: 0.8, fontSize: '0.95rem', maxWidth: '300px', lineHeight: '1.6' }}>
                             Traducciones públicas y servicios lingüísticos con compromiso y precisión profesional.
-                        </p>
-                        <p style={{ opacity: 0.5, fontSize: '0.75rem', marginTop: '0.2rem' }}>
-                            &copy; {new Date().getFullYear()} Aimé Translations.<br />Todos los derechos reservados.
-                        </p>
-                        <p style={{ fontSize: '0.75rem', opacity: 0.6 }}>
-                            Desarrollado por <a href="https://wa.me/5493541315119" target="_blank" rel="noopener noreferrer" style={{ color: '#ce4e41', textDecoration: 'none' }}>Franco Zvilling</a>
                         </p>
                     </div>
 
                     {/* Quick Menu */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', position: 'relative', display: 'inline-block' }}>
+                    <div className="footer-col" style={{ display: 'flex', flexDirection: 'column' }}>
+                        <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', position: 'relative', display: 'inline-block', fontWeight: '600' }}>
                             Menú Rápido
-                            <span style={{ position: 'absolute', bottom: '-4px', left: '50%', transform: 'translateX(-50%)', width: '30px', height: '2px', background: 'var(--secondary)' }}></span>
+                            <span className="footer-title-line" style={{ position: 'absolute', bottom: '-6px', left: '50%', transform: 'translateX(-50%)', width: '40px', height: '2px', background: 'var(--secondary)' }}></span>
                         </h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, textAlign: 'center' }}>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                             {quickLinks.map((link) => (
-                                <li key={link.name} style={{ marginBottom: '0.5rem' }}>
+                                <li key={link.name}>
                                     <a
                                         href={link.href}
                                         className="footer-link"
                                         style={{
                                             opacity: 0.8,
-                                            transition: 'opacity 0.2s, transform 0.2s',
+                                            transition: 'all 0.3s ease',
                                             display: 'inline-block',
-                                            fontSize: '0.9rem'
+                                            fontSize: '0.95rem',
+                                            color: 'var(--text-color)'
                                         }}
                                     >
                                         {link.name}
@@ -104,72 +99,96 @@ export default function Footer() {
                     </div>
 
                     {/* Contact & Socials */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', position: 'relative', display: 'inline-block' }}>
+                    <div className="footer-col" style={{ display: 'flex', flexDirection: 'column' }}>
+                        <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', position: 'relative', display: 'inline-block', fontWeight: '600' }}>
                             Contacto
-                            <span style={{ position: 'absolute', bottom: '-4px', left: '50%', transform: 'translateX(-50%)', width: '30px', height: '2px', background: 'var(--secondary)' }}></span>
+                            <span className="footer-title-line" style={{ position: 'absolute', bottom: '-6px', left: '50%', transform: 'translateX(-50%)', width: '40px', height: '2px', background: 'var(--secondary)' }}></span>
                         </h4>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
-
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', alignItems: 'flex-start', paddingLeft: '35px' }}>
-                                {socialLinks.map((social, index) => (
-                                    <a
-                                        key={index}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="footer-link"
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '0.8rem',
-                                            textDecoration: 'none',
-                                            color: 'var(--text-color)',
-                                            fontSize: '0.85rem',
-                                            opacity: 0.8,
-                                            transition: 'opacity 0.2s, transform 0.2s'
-                                        }}
-                                    >
-                                        <div style={{
-                                            width: '32px',
-                                            height: '32px',
-                                            borderRadius: '50%',
-                                            background: 'var(--surface)',
-                                            border: '1px solid var(--border)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            color: 'var(--text-color)',
-                                            flexShrink: 0
-                                        }}>
-                                            {social.icon}
-                                        </div>
-                                        <span>{social.text}</span>
-                                    </a>
-                                ))}
-                            </div>
-
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
+                            {socialLinks.map((social, index) => (
+                                <a
+                                    key={index}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="footer-link"
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '1rem',
+                                        textDecoration: 'none',
+                                        color: 'var(--text-color)',
+                                        fontSize: '0.95rem',
+                                        opacity: 0.8,
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                >
+                                    <div className="social-icon" style={{
+                                        width: '36px',
+                                        height: '36px',
+                                        borderRadius: '50%',
+                                        background: 'var(--surface)',
+                                        border: '1px solid var(--border)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: 'var(--text-color)',
+                                        flexShrink: 0
+                                    }}>
+                                        {social.icon}
+                                    </div>
+                                    <span>{social.text}</span>
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
 
-
-
+                {/* Footer Bottom */}
+                <div className="footer-bottom" style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    paddingTop: '1.5rem',
+                    gap: '1rem',
+                    fontSize: '0.85rem',
+                    opacity: 0.7
+                }}>
+                    <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Aimé Translations. Todos los derechos reservados.</p>
+                    <p style={{ margin: 0 }}>
+                        Desarrollado por <a href="https://wa.me/5493541315119" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--secondary)', textDecoration: 'none', fontWeight: '600' }}>Franco Zvilling</a>
+                    </p>
+                </div>
             </div>
 
             <style>{`
                 .footer-link:hover {
                     opacity: 1 !important;
                     transform: translateX(5px);
-                    color: var(--secondary);
+                    color: var(--secondary) !important;
                 }
-                .social-icon:hover {
+                .social-icon {
+                    transition: all 0.3s ease;
+                }
+                .social-icon:hover, .footer-link:hover .social-icon {
                     background: var(--primary) !important;
                     color: #fff !important;
-                    transform: translateY(-3px);
                     border-color: var(--primary) !important;
+                    transform: translateY(-3px);
+                }
+                .footer-col {
+                    align-items: center;
+                    text-align: center;
+                }
+                @media (max-width: 768px) {
+                    .footer-bottom {
+                        flex-direction: column;
+                        text-align: center;
+                        justify-content: center;
+                    }
                 }
             `}</style>
-        </footer >
+        </footer>
     );
 }

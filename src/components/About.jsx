@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, Shield, Laptop } from 'lucide-react';
+import { CheckCircle2, Shield, Laptop, Download } from 'lucide-react';
 import foto from '../assets/images/foto.jpeg';
+import portfolioPDF from '../assets/images/porfolio/portfolio.pdf';
 
 export default function About() {
     return (
@@ -65,9 +66,9 @@ export default function About() {
 
                 </motion.div>
 
-                {/* Visual Side (Abstract/Image Placeholder) */}
+                {/* Visual Side */}
                 <motion.div
-                    style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}
+                    style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -84,6 +85,24 @@ export default function About() {
                     }}>
                         <img src={foto} alt="Aimé - Traductora Pública" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
+
+                    {/* Botón de descarga del portafolio */}
+                    <a 
+                        href={portfolioPDF} 
+                        download="Portafolio_Aime_Translations.pdf"
+                        className="btn btn-primary"
+                        style={{ 
+                            padding: '1rem 2.5rem', 
+                            fontSize: '1.05rem', 
+                            borderRadius: '50px', 
+                            boxShadow: '0 10px 25px rgba(116, 169, 232, 0.4)',
+                            width: '100%',
+                            maxWidth: '300px'
+                        }}
+                    >
+                        Descargá mi portafolio
+                        <Download size={20} />
+                    </a>
                 </motion.div>
 
             </div>
